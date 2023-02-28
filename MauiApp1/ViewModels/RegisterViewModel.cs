@@ -78,6 +78,32 @@ namespace MauiApp1.ViewModels
     }
     public partial class RegisterViewModel : ObservableObject
     {
+        [ObservableProperty]
+        private ObservableCollection<TermsViewModel> termsViewModel = new ObservableCollection<TermsViewModel>();
 
+        [ObservableProperty]
+        private bool nextButtonEnable = false;
+
+        public RegisterViewModel()
+        {
+            TermsViewModel.Add(new TermsViewModel()
+                                   .SetType(TerstType.All)
+                                   .SetTitle("전체동의"));
+            TermsViewModel.Add(new TermsViewModel()
+                                   .SetType(TerstType.Service)
+                                   .SetTitle("서비스 이용약관 (필수)")
+                                   .SetSubTitleEnabled());
+            TermsViewModel.Add(new TermsViewModel()
+                                   .SetType(TerstType.Personal)
+                                   .SetTitle("개인정보 수집 및 이용 (필수)")
+                                   .SetSubTitleEnabled());
+            TermsViewModel.Add(new TermsViewModel()
+                                   .SetType(TerstType.Thirdparties)
+                                   .SetTitle("개인정보 제3자 정보제공 동의 (필수)")
+                                   .SetSubTitleEnabled());
+            TermsViewModel.Add(new TermsViewModel()
+                                   .SetType(TerstType.Marketings)
+                                   .SetTitle("마케팅 정보 수신 동의 (선택)"));
+        }
     }
 }

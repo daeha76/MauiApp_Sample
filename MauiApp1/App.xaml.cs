@@ -8,12 +8,12 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-        var nav = new NavigationPage(new LoginPage())
-        {
-            BarBackground = Colors.Transparent,
-            BackgroundColor = Colors.Transparent,
-            BarTextColor = Colors.Black
-        };
-        MainPage = nav;
+        //var nav = new NavigationPage(new LoginPage())
+        //{
+        //    BarBackground = Colors.Transparent,
+        //    BackgroundColor = Colors.Transparent,
+        //    BarTextColor = Colors.Black
+        //};
+        //MainPage = nav;
 	}
 }
