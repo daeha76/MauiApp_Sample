@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="MauiApp1.Views.LoginPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MauiApp1.ViewModels"
+             Title="LoginPage"
+             x:DataType="{x:Type vm:LoginViewModel}">
+    <Grid RowDefinitions="auto, 67, auto">
+        <Image Grid.Row="0"
+               Source="dotnet_bot"
+               WidthRequest="120"/>
+        <VerticalStackLayout Grid.Row="2" Padding="0,0">
+            <Entry x:Name="en_Email"
+                   Keyboard="Email"
+                   Placeholder="아이디(이메일)를 입력하세요."
+                   ReturnType="Next"
+                   Text="{Binding EmailAddress}">
+                <Entry.Behaviors>
+                    <!--<behaviors:EmailValidationBehavior />-->
+                </Entry.Behaviors>
+                
+            </Entry>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
